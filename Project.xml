@@ -15,14 +15,11 @@
 
 	<assets path="assets" />
 	<assets path="alsoft.ini" />
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 	
 	<assets path="assets/music" include="*.mp3" if="web"/>
 	<assets path="assets/music" include="*.ogg" unless="web"/>
 	<assets path="assets/sounds" include="*.mp3" if="web" />
 	<assets path="assets/sounds" include="*.ogg" unless="web" />
-
-	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 
 	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY 
 		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO
