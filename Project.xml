@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://lime.openfl.org/project/1.0.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
+	<!-- _________________________ Application Settings _________________________ -->
+
+	<app title="Funkin' Legacy" file="Funkin" packageName="com.ninjamuffin99.funkin" main="Main" version="0.2.7.1" company="ninjamuffin99" />
+	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" orientation="landscape" fullscreen="false" resizable="true" allow-high-dpi="true" />
+
+	<!-- _____________________________ Path Settings ____________________________ -->
+
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+
+	<source path="src" />
+
+	<assets path="assets" />
+	<assets path="alsoft.ini" />
+	<assets path='art/readme.txt' rename='do NOT readme.txt' />
+	
+	<assets path="assets/music" include="*.mp3" if="web"/>
+	<assets path="assets/music" include="*.ogg" unless="web"/>
+	<assets path="assets/sounds" include="*.mp3" if="web" />
+	<assets path="assets/sounds" include="*.ogg" unless="web" />
+
+	<assets path="CHANGELOG.md" rename='changelog.txt'/>
+
+	<!-- NOTE FOR FUTURE SELF SINCE FONTS ARE ALWAYS FUCKY 
+		TO FIX ONE OF THEM, I CONVERTED IT TO OTF. DUNNO IF YOU NEED TO
+		THEN UHHH I USED THE NAME OF THE FONT WITH SETFORMAT() ON THE TEXT!!!
+		NOT USING A DIRECT THING TO THE ASSET!!!
+	-->
+	<assets path="assets/fonts" />
+
+	<!-- _______________________________ Libraries ______________________________ -->
+
+	<haxelib name="flixel" />
+
+	<!--In case you want to use the addons package-->
+	<haxelib name="flixel-addons" />
+
+	<!--In case you want to use the ui package-->
+	<haxelib name="flixel-ui" />
+
+	<!-- ______________________________ Haxedefines _____________________________ -->
+
+	<!--Disable the Flixel core focus lost screen-->
+	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
+
+	<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
+	<haxedef name="FLX_NO_DEBUG" unless="debug" />
+
+	<haxedef name="no-deprecation-warnings" />
+	<haxedef name="message.reporting" value="pretty" />
+
+	<!-- _________________________________ Custom _______________________________ -->
+
+	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
+	
+	<icon path="art/iconOG.png" />
+	<icon path="art/icon16.png" size='16'/>
+	<icon path="art/icon32.png" size='32'/>
+	<icon path="art/icon64.png" size='64'/>
+	
+</project>
